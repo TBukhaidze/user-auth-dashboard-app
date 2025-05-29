@@ -27,7 +27,7 @@ api.interceptors.response.use(
           : "Session expired or unauthorized. Please login again."
       );
       setTimeout(() => {
-        window.location.href = "/login";
+        window.location.href = "/";
       }, 2500);
     }
     return Promise.reject(error);
