@@ -57,12 +57,23 @@ const Dashboard = () => {
     setFilterValue(value);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    toast.success("Logout");
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 2000);
+  };
+
   return (
     <div className="container mt-3">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div className="p-3">
           <h1 className="text-primary fw-bold mb-0">THE APP</h1>
         </div>
+        <button className="btn btn-outline-danger" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
 
       <div className="border rounded p-4 bg-white shadow-sm">
